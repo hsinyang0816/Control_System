@@ -1,0 +1,10 @@
+clear all;
+clf;
+num=[1];
+den=[1 2 2];
+w=logspace(-1,3,1000);
+[re,im] = nyquist(num,den,w);
+plot(re,im,re,-im,'LineWidth',2);
+xlabel('Real');
+ylabel('Imaginary');
+title(' 6.27(d):Nyquist plot');

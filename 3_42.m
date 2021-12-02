@@ -1,0 +1,13 @@
+num=[1/2, 1];
+den1=[1/16, 1/4, 1];
+sys1=tf(num,den1);
+t=0:.01:3;
+y1=step(sys1,t);
+den=conv([1/40, 1],den1);
+sys=tf(num,den);
+y=step(sys,t);
+plot(t,y1,t,y);
+xlabel('Time (sec)');
+ylabel('y(t)');
+title('Step Response');
+grid on;

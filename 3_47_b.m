@@ -1,0 +1,18 @@
+s=tf('s');
+u=1/s;
+sysG1=-u*2*(s-1)/((s+1)*(s+2));
+sysG2=u*3*(s-1)*(s-2)/((s+1)*(s+2)*(s+3));
+t=0:0.01:10;
+y1=impulse(sysG1,t);
+y2=impulse(sysG2,t);
+subplot(2,1,1),plot(t,y1);
+xlabel('Time(sec)');
+ylabel('y(t)');
+title('Step Response of G1(s)');
+grid;
+subplot(2,1,2),plot(t,y2);
+xlabel('Time(sec)');
+ylabel('y(t)');
+title('Step Response of G2(s)');
+grid;
+hold on;

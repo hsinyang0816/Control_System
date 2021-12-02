@@ -1,0 +1,11 @@
+s=tf('s');
+u=1/s;
+sysG=u*100*113.34/(s^2+92.1*s+(25*67.1+100*113.34));
+t=0:0.001:0.2;
+y=impulse(sysG,t);
+plot(t,y);
+xlabel('Time(sec)');
+ylabel('y(t)');
+title('Step Response');
+grid;
+hold on;
